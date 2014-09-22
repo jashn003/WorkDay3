@@ -10,9 +10,21 @@ Public Class Form1
 
         Dim st1 As String = txtFirstNum.Text
         Dim st2 As String = txtSecondNum.Text
+        'Check point
+        If IsNumeric(st1) And IsNumeric(st2) Then
+            MessageBox.Show("Please enter numbers")
+            Return
+        End If
 
         num1 = CDbl(st1)
         num2 = CDbl(st2)
+        'Checkpoint 2
+        If Not (num1 >= 0 And num2 > 0) Then
+            MessageBox.Show("Please type non-negative number")
+            Return
+
+        End If
+
 
         Dim result As String
 
@@ -24,7 +36,15 @@ Public Class Form1
             result = "They are equal"
         End If
 
+
         txtResult.Text = result
+
+
+
+
     End Sub
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
